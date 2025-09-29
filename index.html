@@ -1,23 +1,56 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>This is my first web!</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simplified Notes</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="icon" href="small s.png"> 
+  <script src="index.js" defer></script>
 </head>
 <body>
-    <h1>This is my first h1!</h1>
-    <h1>Hello</h1>
-    <h1>hi</h1>
-    <h1>It works!!</h1>
-    <h1>Test 2</h1>
-    <h2>This is smaller than h1</h2>
-    <h3>This is even smaller</h3>
-    <h4>This is the 3rd smallest</h4>
-    <h5>This is 2nd smallest</h5>
-    <h6>This is the smallest</h6>
-    <div style="background-color: aqua; color: black; width: 100px; height: 100px;">Box1</div>
-    <div style="background-color: red; color: black; width: 100px; height: 100px;">Box2</div>
-    <div style="background-color: green; color: black; width: 100px; height: 100px;">Box3</div>
+ 
+  <header>
+    
+    <h1>Simplified Notes</h1>
+
+    <div>
+      <button class="add-note-btn" onclick="openNoteDialog()">+ Add Note</button>
+      <button id="themeToggleBtn" class="theme-toggle-btn">Darkness</button>
+    </div>
+
+  </header>
+
+  <main id="notesContainer" class="notes-grid">
+
+  </main>
+
+  <dialog id="noteDialog">
+    <div class="dialog-content">
+
+      <div class="dialog-header">
+        <h2 class="dialog-title" id="dialogTitle">Add New Note</h2>
+        <button class="close-btn" onclick="closeNoteDialog()">x</button>
+      </div>
+
+      <form id="noteForm">
+        <div class="form-group">
+          <label for="noteTitle" class="form-label">Name</label>
+          <input type="text" id="noteTitle" class="form-input" placeholder="Enter the notes name..." required>
+        </div>
+        
+        <div class="form-group">
+          <label for="noteContent" class="form-label">Text</label>
+          <textarea id="noteContent" class="form-textarea" placeholder="Write your note here..." required></textarea>
+        </div>
+
+        <div class="dialog-actions">
+          <button type="button" class="cancel-btn" onclick="closeNoteDialog()">Cancel Note</button>
+          <button type="submit" class="save-btn">Save Note</button>
+        </div>
+      </form>
+
+    </div>
+  </dialog>
 </body>
 </html>
